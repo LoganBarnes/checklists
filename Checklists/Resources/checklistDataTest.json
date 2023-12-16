@@ -1,0 +1,14 @@
+[
+    {
+        "id": 0,
+        "airframe": "R44",
+        "checklistName": "BEFORE STARTING ENGINE",
+        "group": "Startup"
+    },
+    {
+        "id": 1,
+        "airframe": "R44",
+        "checklistName": "STARTING ENGINE AND RUN-UP",
+        "group": "Startup"
+    }
+]

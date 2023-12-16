@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct ChecklistsApp: App {
+    @State private var checklistData = ChecklistData()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(checklistData)
         }
     }
 }
