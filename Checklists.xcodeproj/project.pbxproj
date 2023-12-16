@@ -12,6 +12,8 @@
 		02600CF42B2BFD05008ECA59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02600CF32B2BFD05008ECA59 /* Assets.xcassets */; };
 		02600CF72B2BFD05008ECA59 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02600CF62B2BFD05008ECA59 /* Preview Assets.xcassets */; };
 		02600D002B2BFDB8008ECA59 /* checklistData.json in Resources */ = {isa = PBXBuildFile; fileRef = 02600CFF2B2BFDB8008ECA59 /* checklistData.json */; };
+		0260EC2D2B2E251E00B9CC73 /* ModelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0260EC2C2B2E251E00B9CC73 /* ModelState.swift */; };
+		0260EC2F2B2E2ADB00B9CC73 /* AirframeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0260EC2E2B2E2ADB00B9CC73 /* AirframeImage.swift */; };
 		0288DD5D2B2C26190012C4B4 /* ChecklistData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0288DD5C2B2C26190012C4B4 /* ChecklistData.swift */; };
 		0288DD5F2B2C26740012C4B4 /* Checklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0288DD5E2B2C26740012C4B4 /* Checklist.swift */; };
 		0288DD612B2C28BA0012C4B4 /* ChecklistEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0288DD602B2C28BA0012C4B4 /* ChecklistEntry.swift */; };
@@ -28,6 +30,8 @@
 		02600CF32B2BFD05008ECA59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02600CF62B2BFD05008ECA59 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		02600CFF2B2BFDB8008ECA59 /* checklistData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = checklistData.json; sourceTree = "<group>"; };
+		0260EC2C2B2E251E00B9CC73 /* ModelState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelState.swift; sourceTree = "<group>"; };
+		0260EC2E2B2E2ADB00B9CC73 /* AirframeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirframeImage.swift; sourceTree = "<group>"; };
 		0288DD5C2B2C26190012C4B4 /* ChecklistData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistData.swift; sourceTree = "<group>"; };
 		0288DD5E2B2C26740012C4B4 /* Checklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checklist.swift; sourceTree = "<group>"; };
 		0288DD602B2C28BA0012C4B4 /* ChecklistEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistEntry.swift; sourceTree = "<group>"; };
@@ -68,8 +72,8 @@
 			isa = PBXGroup;
 			children = (
 				02600CEF2B2BFD04008ECA59 /* ChecklistsApp.swift */,
-				0288DD632B2C2B150012C4B4 /* Views */,
 				0288DD622B2C2A160012C4B4 /* Model */,
+				0288DD632B2C2B150012C4B4 /* Views */,
 				02600D012B2BFDC8008ECA59 /* Resources */,
 				02600CF32B2BFD05008ECA59 /* Assets.xcassets */,
 				02600CF52B2BFD05008ECA59 /* Preview Content */,
@@ -100,6 +104,7 @@
 				0288DD5C2B2C26190012C4B4 /* ChecklistData.swift */,
 				0288DD5E2B2C26740012C4B4 /* Checklist.swift */,
 				0288DD602B2C28BA0012C4B4 /* ChecklistEntry.swift */,
+				0260EC2C2B2E251E00B9CC73 /* ModelState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -111,6 +116,7 @@
 				02FA9B962B2D660300BBE29B /* AirframeView.swift */,
 				02FA9B982B2D7B1300BBE29B /* ChecklistList.swift */,
 				02FA9B9A2B2D824000BBE29B /* ChecksList.swift */,
+				0260EC2E2B2E2ADB00B9CC73 /* AirframeImage.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -191,9 +197,11 @@
 				02600CF22B2BFD04008ECA59 /* ContentView.swift in Sources */,
 				02FA9B992B2D7B1300BBE29B /* ChecklistList.swift in Sources */,
 				02FA9B972B2D660300BBE29B /* AirframeView.swift in Sources */,
+				0260EC2F2B2E2ADB00B9CC73 /* AirframeImage.swift in Sources */,
 				02600CF02B2BFD04008ECA59 /* ChecklistsApp.swift in Sources */,
 				0288DD5F2B2C26740012C4B4 /* Checklist.swift in Sources */,
 				0288DD612B2C28BA0012C4B4 /* ChecklistEntry.swift in Sources */,
+				0260EC2D2B2E251E00B9CC73 /* ModelState.swift in Sources */,
 				0288DD5D2B2C26190012C4B4 /* ChecklistData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

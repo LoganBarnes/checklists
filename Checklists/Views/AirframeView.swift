@@ -9,32 +9,36 @@ import SwiftUI
 
 struct AirframeView: View {
     @Environment(ChecklistData.self) var checklistData
+    @Environment(ModelState.self) var modelState
     
     var body: some View {
-        NavigationView {
-            Grid {
-                Divider()
+        Grid {
+            Text("Airframe")
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            Text("Select airframe")
+                .font(.headline)
+            
+            ForEach(checklistData.airframes, id:\.self) {airframe in
+                let checklists = checklistData.airframeChecklists[airframe] ?? []
                 
-                ForEach(checklistData.airframes, id:\.self) {airframe in
-                    let checklists = checklistData.airframeChecklists[airframe] ?? []
-                    
-                    GridRow {
-                        NavigationLink {
-                            ChecklistList(checklists: checklists)
-                        } label: {
-                            Text(airframe)
-                                .font(.title)
-                        }
-                    }.padding(40)
-                    Divider()
-                }
+                Button {
+                    modelState.airframe    = airframe
+                    modelState.checklists  = checklists
+                    modelState.currentView = .Checklists
+                } label: {
+                    VStack {
+                        AirframeImage(image: Image(airframe))
+                        Text(airframe)
+                            .font(.title)
+                    }
+                }.padding(40)
             }
         }
-        .navigationTitle("Airframes")
     }
 }
 
 #Preview {
     AirframeView()
         .environment(ChecklistData())
+        .environment(ModelState())
 }
