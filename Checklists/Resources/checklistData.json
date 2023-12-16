@@ -1,5 +1,19 @@
 [
     {
+        "airframe": "R22",
+        "checklistName": "BEFORE STARTING ENGINE",
+        "group": "Startup",
+        "checks":
+        [
+            {
+                "check": "Clock",
+                "response": "Clear",
+                "model": "all",
+                "optional": false
+            }
+        ]
+    },
+    {
         "airframe": "R44",
         "checklistName": "BEFORE STARTING ENGINE",
         "group": "Startup",

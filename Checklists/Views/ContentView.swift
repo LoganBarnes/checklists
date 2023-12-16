@@ -8,20 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    @Environment(ChecklistData.self) var checklistData
-    
     var body: some View {
-        List{
-            ForEach(checklistData.checklists) { checklist in
-                HStack {
-                    Text(checklist.checklistName)
-                }
-            }
-        }
+        AirframeView()
     }
 }
 
 #Preview {
     ContentView()
-        .environment(ChecklistData())
 }

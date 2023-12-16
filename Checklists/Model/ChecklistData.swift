@@ -12,17 +12,17 @@ import Foundation
 class ChecklistData {
     var checklists: [Checklist] = load("checklistData.json")
     
-    var airframes: [String] {
-        checklists.map { checklist in
-            checklist.airframe
-        }
-    }
-    
     var airframeChecklists: [String : [Checklist]] {
-        checklists.reduce([String : [Checklist]]()) { (dict, checklist) -> [String : [Checklist]] in
+        checklists.reduce([String : [Checklist]]()) { dict, checklist in
             var dict = dict
             dict[checklist.airframe, default: []].append(checklist)
             return dict
+        }
+    }
+    
+    var airframes: [String] {
+        airframeChecklists.map { airframe, _ in
+            return airframe
         }
     }
 }

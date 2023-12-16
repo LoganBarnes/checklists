@@ -11,22 +11,26 @@ struct AirframeView: View {
     @Environment(ChecklistData.self) var checklistData
     
     var body: some View {
-        
-        ForEach(checklistData.airframes, id:\.self) {airframe in
-                    HStack {
-                        Text(airframe)
-                        Text(checklistData.airframeChecklists[airframe]?[0].checklistName ?? "No checklist")
-                    }
+        NavigationView {
+            Grid {
+                Divider()
+                
+                ForEach(checklistData.airframes, id:\.self) {airframe in
+                    let checklists = checklistData.airframeChecklists[airframe] ?? []
+                    
+                    GridRow {
+                        NavigationLink {
+                            ChecklistList(checklists: checklists)
+                        } label: {
+                            Text(airframe)
+                                .font(.title)
+                        }
+                    }.padding(40)
+                    Divider()
                 }
-        
-//        List{
-//            ForEach(checklistData.airframeChecklists) { airframe, checklist in
-//                HStack {
-////                    Text(airframe)
-//                    Text(checklist.checklistName)
-//                }
-//            }
-//        }
+            }
+        }
+        .navigationTitle("Airframes")
     }
 }
 
