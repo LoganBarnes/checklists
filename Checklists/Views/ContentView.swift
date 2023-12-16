@@ -15,12 +15,17 @@ struct ContentView: View {
         case .Airframe:
             AirframeView()
             
+        case .Models:
+            ModelView(airframe: modelState.airframe!,
+                      models: modelState.models!)
+            
         case .Checklists:
-            ChecklistList(airframe: modelState.airframe!,
-                          checklists: modelState.checklists!)
+            ChecklistsView(airframe: modelState.airframe!,
+                           model: modelState.model ?? "",
+                           checklists: modelState.checklists!)
             
         case .Checks:
-            ChecksList(checklist: modelState.checklist!)
+            ChecksView(checklist: modelState.checklist!)
             
         case .CheckEntry:
             AirframeView()

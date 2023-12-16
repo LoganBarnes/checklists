@@ -25,6 +25,21 @@ class ChecklistData {
             return airframe
         }.sorted()
     }
+    
+    var airframeModels: [String : [String]] {
+        airframeChecklists.mapValues { checklists in
+            checklists.reduce([String]()) { models, checklist in
+                var models = models
+                for check in checklist.checks {
+                    if check.model != "all" && !models.contains(check.model)
+                    {
+                        models.append(check.model)
+                    }
+                }
+                return models
+            }.sorted()
+        }
+    }
 }
 
 func load<T: Decodable>(_ filename: String) -> T {

@@ -12,19 +12,21 @@ struct AirframeView: View {
     @Environment(ModelState.self) var modelState
     
     var body: some View {
-        Grid {
+        VStack {
             Text("Airframe")
                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
             Text("Select airframe")
                 .font(.headline)
             
-            ForEach(checklistData.airframes, id:\.self) {airframe in
-                let checklists = checklistData.airframeChecklists[airframe] ?? []
-                
+            ForEach(checklistData.airframes, id:\.self) { airframe in
                 Button {
+                    let checklists = checklistData.airframeChecklists[airframe] ?? []
+                    let models = checklistData.airframeModels[airframe] ?? []
+                    
                     modelState.airframe    = airframe
+                    modelState.models      = models
                     modelState.checklists  = checklists
-                    modelState.currentView = .Checklists
+                    modelState.currentView = models.isEmpty ? .Checklists : .Models
                 } label: {
                     VStack {
                         AirframeImage(image: Image(airframe))

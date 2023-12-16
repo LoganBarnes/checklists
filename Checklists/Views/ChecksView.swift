@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ChecksList: View {
+struct ChecksView: View {
     @Environment(ModelState.self) var modelState
     
     var checklist: Checklist
@@ -45,6 +45,6 @@ struct ChecksList: View {
 }
 
 #Preview {
-    ChecksList(checklist: ChecklistData().checklists[1])
+    ChecksView(checklist: ChecklistData().checklists[1])
         .environment(ModelState())
 }

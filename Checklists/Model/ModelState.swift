@@ -11,6 +11,7 @@ import Foundation
 class ModelState {
     enum CurrentView {
         case Airframe
+        case Models
         case Checklists
         case Checks
         case CheckEntry
@@ -19,6 +20,8 @@ class ModelState {
     var currentView: CurrentView = .Airframe
     
     var airframe: String? = nil
+    var models: [String]? = nil
+    var model: String? = nil
     var checklists: [Checklist]? = nil
     var checklist: Checklist? = nil
     var check: ChecklistEntry? = nil
