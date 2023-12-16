@@ -16,6 +16,7 @@
 		0288DD5F2B2C26740012C4B4 /* Checklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0288DD5E2B2C26740012C4B4 /* Checklist.swift */; };
 		0288DD612B2C28BA0012C4B4 /* ChecklistEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0288DD602B2C28BA0012C4B4 /* ChecklistEntry.swift */; };
 		02FA9B952B2D3EA700BBE29B /* checklistDataTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 02FA9B942B2D3EA700BBE29B /* checklistDataTest.json */; };
+		02FA9B972B2D660300BBE29B /* AirframeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FA9B962B2D660300BBE29B /* AirframeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		0288DD5E2B2C26740012C4B4 /* Checklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checklist.swift; sourceTree = "<group>"; };
 		0288DD602B2C28BA0012C4B4 /* ChecklistEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistEntry.swift; sourceTree = "<group>"; };
 		02FA9B942B2D3EA700BBE29B /* checklistDataTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = checklistDataTest.json; sourceTree = "<group>"; };
+		02FA9B962B2D660300BBE29B /* AirframeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirframeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				02600CF12B2BFD04008ECA59 /* ContentView.swift */,
+				02FA9B962B2D660300BBE29B /* AirframeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02600CF22B2BFD04008ECA59 /* ContentView.swift in Sources */,
+				02FA9B972B2D660300BBE29B /* AirframeView.swift in Sources */,
 				02600CF02B2BFD04008ECA59 /* ChecklistsApp.swift in Sources */,
 				0288DD5F2B2C26740012C4B4 /* Checklist.swift in Sources */,
 				0288DD612B2C28BA0012C4B4 /* ChecklistEntry.swift in Sources */,

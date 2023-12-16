@@ -10,7 +10,21 @@ import Foundation
 
 @Observable
 class ChecklistData {
-    var checklists: [Checklist] = load("checklistDataTest.json")
+    var checklists: [Checklist] = load("checklistData.json")
+    
+    var airframes: [String] {
+        checklists.map { checklist in
+            checklist.airframe
+        }
+    }
+    
+    var airframeChecklists: [String : [Checklist]] {
+        checklists.reduce([String : [Checklist]]()) { (dict, checklist) -> [String : [Checklist]] in
+            var dict = dict
+            dict[checklist.airframe, default: []].append(checklist)
+            return dict
+        }
+    }
 }
 
 func load<T: Decodable>(_ filename: String) -> T {

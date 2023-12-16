@@ -8,9 +8,17 @@
 import Foundation
 import SwiftUI
 
-struct ChecklistEntry: Hashable, Codable {
+struct ChecklistEntry: Hashable, Codable, Identifiable {
+    let id = UUID()
     var check: String
     var response: String
     var model: String
     var optional: Bool
+    
+    private enum CodingKeys: CodingKey {
+        case check
+        case response
+        case model
+        case optional
+    }
 }

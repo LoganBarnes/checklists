@@ -9,9 +9,16 @@ import Foundation
 import SwiftUI
 
 struct Checklist: Hashable, Codable, Identifiable {
-    var id: Int
+    let id = UUID()
     var airframe: String
     var checklistName: String
     var group: String
-//    var checks: [ChecklistEntry]
+    var checks: [ChecklistEntry]
+    
+    private enum CodingKeys: CodingKey {
+        case airframe
+        case checklistName
+        case group
+        case checks
+    }
 }

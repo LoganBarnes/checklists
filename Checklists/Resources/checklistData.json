@@ -9,151 +9,151 @@
                 "check": "Clock",
                 "response": "Clear",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Seat belts",
                 "response": "Fastened",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Fuel shut-off valve",
                 "response": "ON",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Cyclic friction",
                 "response": "OFF",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Collective friction",
                 "response": "OFF",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Cyclic",
                 "response": "Full travel free",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Collective",
                 "response": "Full travel free",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Pedals",
                 "response": "Full travel free",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Throttle",
                 "response": "Full travel free",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Collective",
                 "response": "Full down, friction ON",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Cyclic",
                 "response": "Neutral, friction ON",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Pedals",
                 "response": "Neutral",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Rotor brake",
                 "response": "Disengaged",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Circuit breakers",
                 "response": "In",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Carb heat",
                 "response": "OFF",
                 "model": "Cadet",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Mixture",
                 "response": "Full rich",
                 "model": "Cadet",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Mixture guard",
                 "response": "Installed",
                 "model": "Cadet",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Landing lights",
                 "response": "OFF",
                 "model": "Raven II",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Landing light switch",
                 "response": "OFF",
                 "model": "Cadet",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Avionics switch",
                 "response": "OFF",
                 "model": "Raven II",
-                "optional": "true"
+                "optional": true
             },
             {
                 "check": "Avionics switch",
                 "response": "OFF",
                 "model": "Cadet",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Clutch",
                 "response": "Disengaged",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Altimeter",
                 "response": "Set",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "HYD switch",
                 "response": "ON",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Governor switch",
                 "response": "ON",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             }
         ]
     },
@@ -167,247 +167,247 @@
                 "check": "Throttle twists for priming",
                 "response": "As required",
                 "model": "Cadet",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Throttle",
                 "response": "Closed",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Battery switch",
                 "response": "ON",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Strobe switch",
                 "response": "ON",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Area",
                 "response": "Clear",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Mixture",
                 "response": "Rich",
                 "model": "Raven II",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Ignition switch",
                 "response": "Prime, then Both",
                 "model": "Raven II",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Mixture",
                 "response": "Pull OFF",
                 "model": "Raven II",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Starter",
                 "response": "Engage until engine fires",
                 "model": "Raven II",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Mixture",
                 "response": "Move full rich",
                 "model": "Raven II",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Mixture guard",
                 "response": "Installed",
                 "model": "Raven II",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Ignition switch",
                 "response": "Start, then Both",
                 "model": "Cadet",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Starter-On light",
                 "response": "Out",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Set engine RPM",
                 "response": "50 to 60%",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Clutch switch",
                 "response": "Engaged",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Blades turning",
                 "response": "Less than 5 seconds",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Alternator switch",
                 "response": "ON",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Clock",
                 "response": "Start",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Oil pressure within 30 seconds",
                 "response": "25 psi minimum",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Avionics",
                 "response": "ON",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Headsets",
                 "response": "ON",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Annunciator panel test",
                 "response": "All lights on",
                 "model": "all",
-                "optional": "true"
+                "optional": true
             },
             {
                 "check": "Audio alert",
                 "response": "Test",
                 "model": "all",
-                "optional": "true"
+                "optional": true
             },
             {
                 "check": "Wait for clutch light out",
                 "response": "Circuit breakers in",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Warm-up RPM",
                 "response": "60 to 70%",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Engine gages",
                 "response": "Green",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Mag drop at 75%",
                 "response": "7% max in 2 seconds",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Right mag",
                 "response": "Greater than zero, less than 7",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Left mag",
                 "response": "Greater than zero, less than 7",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Carb heat",
                 "response": "CAT rise/drop",
                 "model": "Cadet",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Carb heat",
                 "response": "Set as required",
                 "model": "Cadet",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Sprag clutch check",
                 "response": "Needles split",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Doors",
                 "response": "Closed and latched",
                 "model": "all",
-                "optional": "true"
+                "optional": true
             },
             {
                 "check": "Limit MAP Chart",
                 "response": "Check",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Cyclic friction",
                 "response": "OFF",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Collective friction",
                 "response": "OFF",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Hydraulic system",
                 "response": "Check",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Governor",
                 "response": "ON",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Increase throttle",
                 "response": "RPM 101-102%",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Warning lights",
                 "response": "Out",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             },
             {
                 "check": "Lift collective slightly, reduce RPM",
                 "response": "Horn/light at 97%",
                 "model": "all",
-                "optional": "false"
+                "optional": false
             }
         ]
     }
