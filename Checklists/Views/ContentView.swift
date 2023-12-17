@@ -13,7 +13,7 @@ struct ContentView: View {
     var body: some View {
         
         if let check = modelState.check {
-            Text("CheckEntryView: \(check.check)")
+            CheckView(check: check)
             
         } else if let checklist = modelState.checklist {
             ChecksView(airframe: modelState.airframe!,
@@ -22,6 +22,7 @@ struct ContentView: View {
             
         } else if let checklists = modelState.checklists {
             ChecklistsView(airframe: modelState.airframe!,
+                           features: modelState.features!,
                            checklists: checklists)
             
         } else if let features = modelState.features {

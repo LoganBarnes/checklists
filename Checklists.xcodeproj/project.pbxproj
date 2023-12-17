@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		02460BC12B2EC32800542327 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02460BC02B2EC32800542327 /* BackButton.swift */; };
+		02460BC52B2EE8E200542327 /* CheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02460BC42B2EE8E200542327 /* CheckView.swift */; };
 		02600CF02B2BFD04008ECA59 /* ChecklistsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02600CEF2B2BFD04008ECA59 /* ChecklistsApp.swift */; };
 		02600CF22B2BFD04008ECA59 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02600CF12B2BFD04008ECA59 /* ContentView.swift */; };
 		02600CF42B2BFD05008ECA59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02600CF32B2BFD05008ECA59 /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		02460BC02B2EC32800542327 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		02460BC42B2EE8E200542327 /* CheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckView.swift; sourceTree = "<group>"; };
 		02600CEC2B2BFD04008ECA59 /* Checklists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checklists.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02600CEF2B2BFD04008ECA59 /* ChecklistsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistsApp.swift; sourceTree = "<group>"; };
 		02600CF12B2BFD04008ECA59 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				02D3E00F2B2EA57B00DE0A8B /* FeaturesView.swift */,
 				02FA9B982B2D7B1300BBE29B /* ChecklistsView.swift */,
 				02FA9B9A2B2D824000BBE29B /* ChecksView.swift */,
+				02460BC42B2EE8E200542327 /* CheckView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				02460BC12B2EC32800542327 /* BackButton.swift in Sources */,
 				0260EC2D2B2E251E00B9CC73 /* ModelState.swift in Sources */,
 				02D3E0102B2EA57B00DE0A8B /* FeaturesView.swift in Sources */,
+				02460BC52B2EE8E200542327 /* CheckView.swift in Sources */,
 				0288DD5D2B2C26190012C4B4 /* ChecklistData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

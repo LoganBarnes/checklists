@@ -21,7 +21,7 @@ class ModelState {
             check = nil
             
         } else if checklist != nil {
-            checks = nil
+            checks    = nil
             checklist = nil
             
         } else if checklists != nil {

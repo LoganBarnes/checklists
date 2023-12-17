@@ -11,6 +11,7 @@ struct ChecklistsView: View {
     @Environment(ModelState.self) var modelState
     
     var airframe: String
+    var features: [String: Bool]
     var checklists: [Checklist]
     
     var body: some View {
@@ -32,9 +33,9 @@ struct ChecklistsView: View {
                 ForEach(checklists, id: \.title) {checklist in
                     Button {
                         modelState.checklist = checklist
-                        modelState.checks = checklist.checks.filter { check in
+                        modelState.checks    = checklist.checks.filter { check in
                             return check.supportsAirframe(airframe: airframe)
-                            && (check.feature == nil || modelState.features![check.feature!] ?? false)
+                            && (check.feature == nil || features[check.feature!] ?? false)
                         }
                     } label: {
                         Text(checklist.title)
@@ -49,7 +50,11 @@ struct ChecklistsView: View {
 }
 
 #Preview {
-    ChecklistsView(airframe: "R44 Raven II",
-                   checklists: ChecklistData().checklists)
+    let airframe = "R44 Raven II"
+    
+    return ChecklistsView(airframe: airframe,
+                          features: ChecklistData().airframeFeatures[airframe]!,
+                          checklists: ChecklistData().airframeChecklists[airframe]!)
+    .environment(ChecklistData())
     .environment(ModelState())
 }

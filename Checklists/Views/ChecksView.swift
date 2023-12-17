@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ChecksView: View {
+    @Environment(ModelState.self) var modelState
+    
     var airframe: String
     var checklist: Checklist
     var checks: [ChecklistEntry]
@@ -23,10 +25,15 @@ struct ChecksView: View {
             
             List{
                 ForEach(checks) {check in
-                    HStack {
-                        Text(check.check)
-                        Spacer()
-                        Text(check.response)
+                    Button{
+                        modelState.check = check
+                    } label: {
+                        HStack {
+                            Text(check.check)
+                            Spacer()
+                            Text(check.response)
+                        }
+                        .foregroundStyle(.black)
                     }
                 }
             }

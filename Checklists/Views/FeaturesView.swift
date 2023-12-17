@@ -24,7 +24,7 @@ struct FeaturesView: View {
         VStack {
             BackButton()
             
-            Text("Features")
+            Text(airframe)
                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
             Text("Select installed features")
                 .font(.headline)
