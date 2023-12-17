@@ -33,7 +33,7 @@ struct ChecksView: View {
                             Spacer()
                             Text(check.response)
                         }
-                        .foregroundStyle(.black)
+                        .foregroundStyle(Color.primary)
                     }
                 }
             }

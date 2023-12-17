@@ -24,6 +24,7 @@ struct CheckView: View {
             
             Spacer()
         }
+        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
     }
 }
 
