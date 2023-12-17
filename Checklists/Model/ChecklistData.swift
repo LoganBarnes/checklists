@@ -13,6 +13,14 @@ class ChecklistData {
     var checklists: [Checklist] = load("checklistData.json")
     
     var airframes = [ "R22", "R44 Cadet", "R44 Raven II", "R66" ]
+    
+    var allChecks: [ChecklistEntry] {
+        checklists.reduce([ChecklistEntry]()) { entries, checklist in
+            var entries = entries
+            entries.append(contentsOf: checklist.checks)
+            return entries
+        }
+    }
 }
 
 func load<T: Decodable>(_ filename: String) -> T {

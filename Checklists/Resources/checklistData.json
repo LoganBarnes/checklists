@@ -342,7 +342,7 @@
             {
                 "check": "Audio alert",
                 "response": "Test",
-                "feature": "Audio Alert Test"
+                "feature": "Audio Alert"
             },
             {
                 "check": "Wait for clutch light out",

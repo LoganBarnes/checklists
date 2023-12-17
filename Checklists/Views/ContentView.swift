@@ -16,9 +16,7 @@ struct ContentView: View {
             AirframeView()
             
         case .Features:
-            Text("Features")
-//            ModelView(airframe: modelState.airframe!,
-//                      models: modelState.models!)
+            FeaturesView(airframe: modelState.airframe!)
             
         case .Checklists:
             Text("Checklists")
