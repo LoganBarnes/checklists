@@ -1,178 +1,154 @@
 [
     {
-        "airframe": "R22",
         "checklistName": "BEFORE STARTING ENGINE",
         "group": "Startup",
         "checks":
         [
             {
                 "check": "Clock",
-                "response": "Clear",
-                "model": "all",
-                "optional": false
-            }
-        ]
-    },
-    {
-        "airframe": "R44",
-        "checklistName": "BEFORE STARTING ENGINE",
-        "group": "Startup",
-        "checks":
-        [
-            {
-                "check": "Clock",
-                "response": "Clear",
-                "model": "all",
-                "optional": false
+                "response": "Clear"
             },
             {
                 "check": "Seat belts",
-                "response": "Fastened",
-                "model": "all",
-                "optional": false
+                "response": "Fastened"
             },
             {
                 "check": "Fuel shut-off valve",
                 "response": "ON",
-                "model": "all",
-                "optional": false
+                "excludedModels": [ "R66" ]
+            },
+            {
+                "check": "Fuel valve",
+                "response": "ON, guard installed",
+                "includedModels": [ "R66" ]
             },
             {
                 "check": "Cyclic friction",
-                "response": "OFF",
-                "model": "all",
-                "optional": false
+                "response": "OFF"
             },
             {
                 "check": "Collective friction",
-                "response": "OFF",
-                "model": "all",
-                "optional": false
+                "response": "OFF"
             },
             {
                 "check": "Cyclic",
-                "response": "Full travel free",
-                "model": "all",
-                "optional": false
+                "response": "Full travel free"
             },
             {
                 "check": "Collective",
-                "response": "Full travel free",
-                "model": "all",
-                "optional": false
+                "response": "Full travel free"
             },
             {
                 "check": "Pedals",
-                "response": "Full travel free",
-                "model": "all",
-                "optional": false
+                "response": "Full travel free"
             },
             {
                 "check": "Throttle",
-                "response": "Full travel free",
-                "model": "all",
-                "optional": false
+                "response": "Full travel free"
             },
             {
                 "check": "Collective",
-                "response": "Full down, friction ON",
-                "model": "all",
-                "optional": false
+                "response": "Full down, friction ON"
             },
             {
                 "check": "Cyclic",
-                "response": "Neutral, friction ON",
-                "model": "all",
-                "optional": false
+                "response": "Neutral, friction ON"
             },
             {
                 "check": "Pedals",
-                "response": "Neutral",
-                "model": "all",
-                "optional": false
+                "response": "Neutral"
             },
             {
                 "check": "Rotor brake",
-                "response": "Disengaged",
-                "model": "all",
-                "optional": false
+                "response": "Disengaged"
             },
             {
                 "check": "Circuit breakers",
-                "response": "In",
-                "model": "all",
-                "optional": false
+                "response": "In"
             },
             {
                 "check": "Carb heat",
                 "response": "OFF",
-                "model": "Cadet",
-                "optional": false
+                "includedModels": [ "R22", "R44 Cadet" ]
             },
             {
                 "check": "Mixture",
                 "response": "Full rich",
-                "model": "Cadet",
-                "optional": false
+                "includedModels": [ "R22", "R44 Cadet" ]
             },
             {
                 "check": "Mixture guard",
                 "response": "Installed",
-                "model": "Cadet",
-                "optional": false
+                "includedModels": [ "R44 Cadet" ]
+            },
+            {
+                "check": "Mixture guard",
+                "response": "Installed",
+                "includedModels": [ "R22" ],
+                "feature": "Mixture Guard"
+            },
+            {
+                "check": "Primer",
+                "response": "OFF",
+                "includedModels": [ "R22" ],
+                "feature": "Primer"
+            },
+            {
+                "check": "Cabin heat",
+                "response": "OFF",
+                "includedModels": [ "R66" ]
+            },
+            {
+                "check": "Anti-ice",
+                "response": "OFF",
+                "includedModels": [ "R66" ]
+            },
+            {
+                "check": "Pitot heat",
+                "response": "OFF",
+                "includedModels": [ "R66" ]
+            },
+            {
+                "check": "Pitot heat",
+                "response": "OFF",
+                "excludedModels": [ "R66" ],
+                "feature": "Pitot Heat"
             },
             {
                 "check": "Landing lights",
-                "response": "OFF",
-                "model": "Raven II",
-                "optional": false
+                "response": "OFF"
             },
             {
-                "check": "Landing light switch",
-                "response": "OFF",
-                "model": "Cadet",
-                "optional": false
+                "check": "Avionics/radios",
+                "response": "OFF"
             },
             {
-                "check": "Avionics switch",
+                "check": "Generator switch",
                 "response": "OFF",
-                "model": "Raven II",
-                "optional": true
-            },
-            {
-                "check": "Avionics switch",
-                "response": "OFF",
-                "model": "Cadet",
-                "optional": false
+                "includedModels": [ "R66" ]
             },
             {
                 "check": "Clutch",
                 "response": "Disengaged",
-                "model": "all",
-                "optional": false
+                "excludedModels": [ "R66" ]
             },
             {
                 "check": "Altimeter",
-                "response": "Set",
-                "model": "all",
-                "optional": false
+                "response": "Set"
             },
             {
                 "check": "HYD switch",
                 "response": "ON",
-                "model": "all",
-                "optional": false
+                "excludedModels": [ "R22" ]
             },
             {
                 "check": "Governor switch",
                 "response": "ON",
-                "model": "all",
-                "optional": false
+                "excludedModels": [ "R66" ]
             }
         ]
     },
     {
-        "airframe": "R44",
         "checklistName": "STARTING ENGINE AND RUN-UP",
         "group": "Startup",
         "checks":
@@ -180,248 +156,325 @@
             {
                 "check": "Throttle twists for priming",
                 "response": "As required",
-                "model": "Cadet",
-                "optional": false
+                "includedModels": [ "R22", "R44 Cadet" ]
             },
             {
                 "check": "Throttle",
                 "response": "Closed",
-                "model": "all",
-                "optional": false
+                "excludedModels": [ "R66" ]
             },
             {
                 "check": "Battery switch",
-                "response": "ON",
-                "model": "all",
-                "optional": false
+                "response": "ON"
             },
             {
                 "check": "Strobe switch",
-                "response": "ON",
-                "model": "all",
-                "optional": false
+                "response": "ON"
+            },
+            {
+                "check": "Igniter (key)",
+                "response": "Enable",
+                "includedModels": [ "R66" ]
             },
             {
                 "check": "Area",
-                "response": "Clear",
-                "model": "all",
-                "optional": false
-            },
-            {
-                "check": "Mixture",
-                "response": "Rich",
-                "model": "Raven II",
-                "optional": false
-            },
-            {
-                "check": "Ignition switch",
-                "response": "Prime, then Both",
-                "model": "Raven II",
-                "optional": false
-            },
-            {
-                "check": "Mixture",
-                "response": "Pull OFF",
-                "model": "Raven II",
-                "optional": false
-            },
-            {
-                "check": "Starter",
-                "response": "Engage until engine fires",
-                "model": "Raven II",
-                "optional": false
-            },
-            {
-                "check": "Mixture",
-                "response": "Move full rich",
-                "model": "Raven II",
-                "optional": false
-            },
-            {
-                "check": "Mixture guard",
-                "response": "Installed",
-                "model": "Raven II",
-                "optional": false
+                "response": "Clear"
             },
             {
                 "check": "Ignition switch",
                 "response": "Start, then Both",
-                "model": "Cadet",
-                "optional": false
+                "includedModels": [ "R22", "R44 Cadet" ]
+            },
+            {
+                "check": "Mixture",
+                "response": "Rich",
+                "includedModels": [ "R44 Raven II" ]
+            },
+            {
+                "check": "Ignition switch",
+                "response": "Prime, then Both",
+                "includedModels": [ "R44 Raven II" ]
+            },
+            {
+                "check": "Mixture",
+                "response": "Pull OFF",
+                "includedModels": [ "R44 Raven II" ]
+            },
+            {
+                "check": "Starter",
+                "response": "Engage until engine fires",
+                "includedModels": [ "R44 Raven II" ]
+            },
+            {
+                "check": "Mixture",
+                "response": "Move full rich",
+                "includedModels": [ "R44 Raven II" ]
+            },
+            {
+                "check": "Mixture guard",
+                "response": "Installed",
+                "includedModels": [ "R44 Raven II" ]
             },
             {
                 "check": "Starter-On light",
                 "response": "Out",
-                "model": "all",
-                "optional": false
+                "excludedModels": [ "R66" ]
             },
             {
                 "check": "Set engine RPM",
                 "response": "50 to 60%",
-                "model": "all",
-                "optional": false
+                "excludedModels": [ "R66" ]
             },
             {
                 "check": "Clutch switch",
                 "response": "Engaged",
-                "model": "all",
-                "optional": false
+                "excludedModels": [ "R66" ]
             },
             {
                 "check": "Blades turning",
                 "response": "Less than 5 seconds",
-                "model": "all",
-                "optional": false
+                "excludedModels": [ "R66" ]
             },
             {
                 "check": "Alternator switch",
                 "response": "ON",
-                "model": "all",
-                "optional": false
+                "excludedModels": [ "R66" ]
+            },
+            {
+                "check": "Start button",
+                "response": "Push and release",
+                "includedModels": [ "R66" ]
             },
             {
                 "check": "Clock",
-                "response": "Start",
-                "model": "all",
-                "optional": false
+                "response": "Start"
             },
             {
                 "check": "Oil pressure within 30 seconds",
                 "response": "25 psi minimum",
-                "model": "all",
-                "optional": false
+                "excludedModels": [ "R66" ]
             },
             {
-                "check": "Avionics",
+                "check": "Fuel cutoff",
+                "response": "Pull OFF",
+                "includedModels": [ "R66" ]
+            },
+            {
+                "check": "Throttle",
+                "response": "Closed",
+                "includedModels": [ "R66" ]
+            },
+            {
+                "check": "N1",
+                "response": "15%, increasing",
+                "includedModels": [ "R66" ]
+            },
+            {
+                "check": "MGT",
+                "response": "Below 150°C",
+                "includedModels": [ "R66" ]
+            },
+            {
+                "check": "Fuel cutoff",
+                "response": "Push ON",
+                "includedModels": [ "R66" ]
+            },
+            {
+                "check": "Successful ignition",
+                "response": "Within 3 seconds",
+                "includedModels": [ "R66" ]
+            },
+            {
+                "check": "MGT",
+                "response": "Monitor, observe limits",
+                "includedModels": [ "R66" ]
+            },
+            {
+                "check": "25% N1",
+                "response": "Main rotor rotating",
+                "includedModels": [ "R66" ]
+            },
+            {
+                "check": "Oil pressure",
+                "response": "Increasing",
+                "includedModels": [ "R66" ]
+            },
+            {
+                "check": "N1",
+                "response": "Stable and 65 to 67%",
+                "includedModels": [ "R66" ]
+            },
+            {
+                "check": "Fuel cutoff guard",
+                "response": "Install, begin timing idle",
+                "includedModels": [ "R66" ]
+            },
+            {
+                "check": "Ground power",
+                "response": "Disconnect",
+                "includedModels": [ "R66" ],
+                "feature": "Ground Power"
+            },
+            {
+                "check": "Generator",
                 "response": "ON",
-                "model": "all",
-                "optional": false
+                "includedModels": [ "R66" ]
+            },
+            {
+                "check": "Avionics/radios",
+                "response": "ON"
             },
             {
                 "check": "Headsets",
-                "response": "ON",
-                "model": "all",
-                "optional": false
+                "response": "ON"
             },
             {
                 "check": "Annunciator panel test",
                 "response": "All lights on",
-                "model": "all",
-                "optional": true
+                "excludedModels": [ "R66" ],
+                "feature": "Annunciator Panel"
+            },
+            {
+                "check": "Annunciator panel test",
+                "response": "All lights on",
+                "includedModels": [ "R66" ]
             },
             {
                 "check": "Audio alert",
                 "response": "Test",
-                "model": "all",
-                "optional": true
+                "feature": "Audio Alert Test"
             },
             {
                 "check": "Wait for clutch light out",
                 "response": "Circuit breakers in",
-                "model": "all",
-                "optional": false
+                "excludedModels": [ "R66" ]
+            },
+            {
+                "check": "Warm-up RPM",
+                "response": "70 to 75%",
+                "includedModels": [ "R22" ]
             },
             {
                 "check": "Warm-up RPM",
                 "response": "60 to 70%",
-                "model": "all",
-                "optional": false
+                "includedModels": [ "R44 Cadet", "R44 Raven II" ]
             },
             {
                 "check": "Engine gages",
                 "response": "Green",
-                "model": "all",
-                "optional": false
+                "excludedModels": [ "R66" ]
             },
             {
                 "check": "Mag drop at 75%",
                 "response": "7% max in 2 seconds",
-                "model": "all",
-                "optional": false
+                "excludedModels": [ "R66" ]
             },
             {
                 "check": "Right mag",
                 "response": "Greater than zero, less than 7",
-                "model": "all",
-                "optional": false
+                "excludedModels": [ "R66" ]
             },
             {
                 "check": "Left mag",
                 "response": "Greater than zero, less than 7",
-                "model": "all",
-                "optional": false
+                "excludedModels": [ "R66" ]
             },
             {
                 "check": "Carb heat",
                 "response": "CAT rise/drop",
-                "model": "Cadet",
-                "optional": false
+                "includedModels": [ "R22", "R44 Cadet" ]
             },
             {
                 "check": "Carb heat",
                 "response": "Set as required",
-                "model": "Cadet",
-                "optional": false
+                "includedModels": [ "R22", "R44 Cadet" ]
             },
             {
                 "check": "Sprag clutch check",
                 "response": "Needles split",
-                "model": "all",
-                "optional": false
+                "includedModels": [ "R66" ]
+            },
+            {
+                "check": "Engine anti-ice check",
+                "response": "Annunciator light",
+                "includedModels": [ "R66" ]
             },
             {
                 "check": "Doors",
                 "response": "Closed and latched",
-                "model": "all",
-                "optional": true
+                "feature": "Doors"
             },
             {
                 "check": "Limit MAP Chart",
                 "response": "Check",
-                "model": "all",
-                "optional": false
+                "excludedModels": [ "R66" ]
             },
             {
                 "check": "Cyclic friction",
-                "response": "OFF",
-                "model": "all",
-                "optional": false
+                "response": "OFF"
             },
             {
                 "check": "Collective friction",
-                "response": "OFF",
-                "model": "all",
-                "optional": false
+                "response": "OFF"
             },
             {
                 "check": "Hydraulic system",
                 "response": "Check",
-                "model": "all",
-                "optional": false
+                "excludedModels": [ "R22" ]
             },
             {
                 "check": "Governor",
                 "response": "ON",
-                "model": "all",
-                "optional": false
+                "excludedModels": [ "R66" ]
+            },
+            {
+                "check": "Increase throttle",
+                "response": "RPM 102-104%",
+                "includedModels": [ "R22" ]
             },
             {
                 "check": "Increase throttle",
                 "response": "RPM 101-102%",
-                "model": "all",
-                "optional": false
+                "includedModels": [ "R44 Cadet", "R44 Raven II" ]
             },
             {
                 "check": "Warning lights",
                 "response": "Out",
-                "model": "all",
-                "optional": false
+                "excludedModels": [ "R66" ]
             },
             {
                 "check": "Lift collective slightly, reduce RPM",
-                "response": "Horn/light at 97%",
-                "model": "all",
-                "optional": false
+                "response": "Horn/light at 97%"
+            },
+            {
+                "check": "Warm-up",
+                "response": "Verify at least one minute idle",
+                "includedModels": [ "R66" ]
+            },
+            {
+                "check": "Throttle",
+                "response": "Increase slowly to full open",
+                "includedModels": [ "R66" ]
+            },
+            {
+                "check": "N1 deceleration check",
+                "response": "as desired",
+                "includedModels": [ "R66" ]
+            },
+            {
+                "check": "N2/R",
+                "response": "Stable at 100% (beep as required)",
+                "includedModels": [ "R66" ]
+            },
+            {
+                "check": "Annunciator lights",
+                "response": "Out",
+                "includedModels": [ "R66" ]
+            },
+            {
+                "check": "Engine gages",
+                "response": "Normal operating range",
+                "includedModels": [ "R66" ]
             }
         ]
     }

@@ -10,7 +10,7 @@ import Foundation
 
 @Observable
 class ChecklistData {
-    var checklists: [Checklist] = load("checklistData.json")
+    var checklists: [Checklist] = load("checklistDataTest.json")
     
     var airframeChecklists: [String : [Checklist]] {
         checklists.reduce([String : [Checklist]]()) { dict, checklist in
