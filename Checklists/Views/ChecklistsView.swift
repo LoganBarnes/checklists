@@ -11,31 +11,19 @@ struct ChecklistsView: View {
     @Environment(ModelState.self) var modelState
     
     var airframe: String
-    var model: String
     var checklists: [Checklist]
     
     var body: some View {
         VStack {
-            Button {
-                modelState.airframe    = nil
-                modelState.currentView = .Airframe
-            } label: {
-                HStack() {
-                    Image(systemName: "chevron.backward")
-                    Text(model.isEmpty ? "Airframes" : "\(airframe) Models")
-                    Spacer()
-                }
-                .padding()
-            }
+            BackButton()
             
             HStack{
-                AirframeImage(image: Image(model.isEmpty ? airframe : model))
+                AirframeImage(image: Image(airframe))
                     .frame(width:100)
                     .padding()
                 VStack {
-                    Text("\(airframe) Checklists")
-                    Text(model)
-                        .font(.footnote)
+                    Text(airframe)
+                    Text("Checklists")
                 }
                 .padding()
             }
@@ -44,7 +32,10 @@ struct ChecklistsView: View {
                 ForEach(checklists, id: \.title) {checklist in
                     Button {
                         modelState.checklist = checklist
-                        modelState.currentView = .Checks
+                        modelState.checks = checklist.checks.filter { check in
+                            return check.supportsAirframe(airframe: airframe)
+                            && (check.feature == nil || modelState.features![check.feature!] ?? false)
+                        }
                     } label: {
                         Text(checklist.title)
                             .font(.title2)
@@ -58,8 +49,7 @@ struct ChecklistsView: View {
 }
 
 #Preview {
-    ChecklistsView(airframe: "R44",
-                   model: "Raven II",
+    ChecklistsView(airframe: "R44 Raven II",
                    checklists: ChecklistData().checklists)
     .environment(ModelState())
 }

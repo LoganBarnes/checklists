@@ -16,6 +16,12 @@ struct Checklist: Hashable, Codable, Identifiable {
     var excludedAirframes: [String]?
     var checks: [ChecklistEntry]
     
+    func supportsAirframe(airframe: String) -> Bool {
+        let included = includedAirframes?.contains(airframe) ?? true
+        let excluded = excludedAirframes?.contains(airframe) ?? false
+        return included && !excluded
+    }
+    
     private enum CodingKeys: CodingKey {
         case title
         case group

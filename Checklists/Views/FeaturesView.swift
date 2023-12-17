@@ -14,48 +14,47 @@ struct FeaturesView: View {
     @Environment(ModelState.self) var modelState
     
     var airframe: String
-    var features: [String] {
-        checklistData.allChecks.reduce([String]()) { features, check in
-            var features = features
-            if check.feature != nil && check.supportsAirframe(airframe: airframe) {
-                features.append(check.feature!)
-            }
-            return features
-        }
-        .sorted()
+    @Binding var features: [String: Bool]
+    
+    var orderedFeatures: [String] {
+        features.keys.sorted()
     }
     
     var body: some View {
         VStack {
-            Button {
-                modelState.airframe    = nil
-                modelState.currentView = .Airframe
-            } label: {
-                HStack() {
-                    Image(systemName: "chevron.backward")
-                    Text("Airframes")
-                    Spacer()
-                }
-                .padding()
-            }
+            BackButton()
             
             Text("Features")
                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
             Text("Select installed features")
                 .font(.headline)
             
-            VStack(alignment: .listRowSeparatorLeading) {
-                ForEach(features, id:\.self) { airframe in
-                    HStack {
-                        Text(airframe)
-                            .font(.title)
-                            .padding(10)
-                        Spacer()
-                        Image(systemName: "checkmark.circle.fill")
-                            .foregroundStyle(.green)
+            VStack {
+                ForEach(orderedFeatures, id:\.self) { feature in
+                    if let enabled = features[feature] {
+                        let binding = Binding {
+                            enabled
+                        } set: {
+                            features[feature] = $0
+                        }
+                        Toggle(feature, isOn: binding)
+                            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                            .padding()
                     }
-                    .padding()
                 }
+            }
+            
+            Button {
+                modelState.checklists = checklistData.airframeChecklists[airframe]
+            } label: {
+                Text("Continue")
+                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    .foregroundStyle(.white)
+                    .multilineTextAlignment(.center)
+                    .padding()
+                    .background(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                        .fill(Color.blue)
+                        .shadow(radius: 3))
             }
             
             Spacer()
@@ -64,7 +63,9 @@ struct FeaturesView: View {
 }
 
 #Preview {
-    FeaturesView(airframe: "R22")
+    @State var features = ["Feature 1": false, "Feat 2" : true ]
+    
+    return FeaturesView(airframe: "R22", features: $features)
         .environment(ChecklistData())
         .environment(ModelState())
 }

@@ -8,31 +8,21 @@
 import SwiftUI
 
 struct ChecksView: View {
-    @Environment(ModelState.self) var modelState
-    
     var airframe: String
     var checklist: Checklist
+    var checks: [ChecklistEntry]
     
     var body: some View {
         VStack {
-            Button {
-                modelState.checklist = nil
-                modelState.currentView = .Checklists
-                
-            } label: {
-                HStack() {
-                    Image(systemName: "chevron.backward")
-                    Text("\(airframe) Checklists")
-                    Spacer()
-                }
-                .padding()
-            }
+            BackButton()
             
             Text(checklist.title)
                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            Text(airframe)
+                .font(.headline)
             
             List{
-                ForEach(checklist.checks) {check in
+                ForEach(checks) {check in
                     HStack {
                         Text(check.check)
                         Spacer()
@@ -46,7 +36,10 @@ struct ChecksView: View {
 }
 
 #Preview {
-    ChecksView(airframe: "R44 Cadet",
-               checklist: ChecklistData().checklists[1])
-        .environment(ModelState())
+    let airframe = "R44 Cadet"
+    
+    return ChecksView(airframe: airframe,
+                      checklist: ChecklistData().airframeChecklists[airframe]![0],
+                      checks: ChecklistData().airframeChecklists[airframe]![0].checks)
+    .environment(ModelState())
 }

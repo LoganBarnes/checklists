@@ -11,25 +11,31 @@ struct ContentView: View {
     @Environment(ModelState.self) var modelState
     
     var body: some View {
-        switch modelState.currentView {
-        case .Airframe:
+        
+        if let check = modelState.check {
+            Text("CheckEntryView: \(check.check)")
+            
+        } else if let checklist = modelState.checklist {
+            ChecksView(airframe: modelState.airframe!,
+                       checklist: checklist,
+                       checks: modelState.checks!)
+            
+        } else if let checklists = modelState.checklists {
+            ChecklistsView(airframe: modelState.airframe!,
+                           checklists: checklists)
+            
+        } else if let features = modelState.features {
+            let binding = Binding {
+                features
+            } set: {
+                modelState.features = $0
+            }
+            FeaturesView(airframe: modelState.airframe!,
+                         features: binding)
+            
+        } else {
             AirframeView()
             
-        case .Features:
-            FeaturesView(airframe: modelState.airframe!)
-            
-        case .Checklists:
-            Text("Checklists")
-//            ChecklistsView(airframe: modelState.airframe!,
-//                           model: modelState.model ?? "",
-//                           checklists: modelState.checklists!)
-            
-        case .Checks:
-            Text("Checks")
-//            ChecksView(checklist: modelState.checklist!)
-            
-        case .CheckEntry:
-            AirframeView()
         }
     }
 }

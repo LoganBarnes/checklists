@@ -12,13 +12,47 @@ import Foundation
 class ChecklistData {
     var checklists: [Checklist] = load("checklistData.json")
     
-    var airframes = [ "R22", "R44 Cadet", "R44 Raven II", "R66" ]
-    
     var allChecks: [ChecklistEntry] {
         checklists.reduce([ChecklistEntry]()) { entries, checklist in
             var entries = entries
             entries.append(contentsOf: checklist.checks)
             return entries
+        }
+    }
+    
+    var airframes: [String] {
+        allChecks.reduce(Set<String>()) { airframes, entry in
+            var airframes = airframes
+            airframes.formUnion(entry.includedAirframes ?? [])
+            airframes.formUnion(entry.excludedAirframes ?? [])
+            return airframes
+        }.sorted()
+    }
+    
+    var airframeFeatures: [String: [String: Bool]] {
+        allChecks.reduce([String: [String: Bool]]()) { features, entry in
+            var features = features
+            
+            for airframe in airframes {
+                if entry.feature != nil && entry.supportsAirframe(airframe: airframe) {
+                    features[airframe, default: [String: Bool]()][entry.feature!] = false
+                }
+            }
+            
+            return features
+        }
+    }
+    
+    var airframeChecklists: [String: [Checklist]] {
+        checklists.reduce([String: [Checklist]]()) { checklists, checklist in
+            var checklists = checklists
+            
+            for airframe in airframes {
+                if checklist.supportsAirframe(airframe: airframe) {
+                    checklists[airframe, default: []].append(checklist)
+                }
+            }
+            return checklists
         }
     }
 }

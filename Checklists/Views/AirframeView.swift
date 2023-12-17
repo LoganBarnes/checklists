@@ -20,10 +20,9 @@ struct AirframeView: View {
             
             VStack(alignment: .listRowSeparatorLeading) {
                 ForEach(checklistData.airframes, id:\.self) { airframe in
-                    
                     Button {
-                        modelState.airframe    = airframe
-                        modelState.currentView = .Features
+                        modelState.airframe = airframe
+                        modelState.features = checklistData.airframeFeatures[airframe]!
                     } label: {
                         AirframeImage(image: Image(airframe))
                         Text(airframe)
