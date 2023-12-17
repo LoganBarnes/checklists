@@ -10,36 +10,9 @@ import Foundation
 
 @Observable
 class ChecklistData {
-    var checklists: [Checklist] = load("checklistDataTest.json")
+    var checklists: [Checklist] = load("checklistData.json")
     
-    var airframeChecklists: [String : [Checklist]] {
-        checklists.reduce([String : [Checklist]]()) { dict, checklist in
-            var dict = dict
-            dict[checklist.airframe, default: []].append(checklist)
-            return dict
-        }
-    }
-    
-    var airframes: [String] {
-        airframeChecklists.map { airframe, _ in
-            return airframe
-        }.sorted()
-    }
-    
-    var airframeModels: [String : [String]] {
-        airframeChecklists.mapValues { checklists in
-            checklists.reduce([String]()) { models, checklist in
-                var models = models
-                for check in checklist.checks {
-                    if check.model != "all" && !models.contains(check.model)
-                    {
-                        models.append(check.model)
-                    }
-                }
-                return models
-            }.sorted()
-        }
-    }
+    var airframes = [ "R22", "R44 Cadet", "R44 Raven II", "R66" ]
 }
 
 func load<T: Decodable>(_ filename: String) -> T {

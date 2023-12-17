@@ -10,15 +10,26 @@ import SwiftUI
 
 struct Checklist: Hashable, Codable, Identifiable {
     let id = UUID()
-    var airframe: String
-    var checklistName: String
+    var title: String
     var group: String
+    var includedAirframes: [String]?
+    var excludedAirframes: [String]?
     var checks: [ChecklistEntry]
     
     private enum CodingKeys: CodingKey {
-        case airframe
-        case checklistName
+        case title
         case group
+        case includedAirframes
+        case excludedAirframes
         case checks
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        title = try values.decode(String.self, forKey: .title)
+        group = try values.decode(String.self, forKey: .group)
+        includedAirframes = try? values.decode([String].self, forKey: .includedAirframes)
+        excludedAirframes = try? values.decode([String].self, forKey: .excludedAirframes)
+        checks = try values.decode([ChecklistEntry].self, forKey: .checks)
     }
 }

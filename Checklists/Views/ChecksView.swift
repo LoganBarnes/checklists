@@ -10,6 +10,7 @@ import SwiftUI
 struct ChecksView: View {
     @Environment(ModelState.self) var modelState
     
+    var airframe: String
     var checklist: Checklist
     
     var body: some View {
@@ -21,13 +22,13 @@ struct ChecksView: View {
             } label: {
                 HStack() {
                     Image(systemName: "chevron.backward")
-                    Text("\(checklist.airframe) Checklists")
+                    Text("\(airframe) Checklists")
                     Spacer()
                 }
                 .padding()
             }
             
-            Text(checklist.checklistName)
+            Text(checklist.title)
                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
             
             List{
@@ -45,6 +46,7 @@ struct ChecksView: View {
 }
 
 #Preview {
-    ChecksView(checklist: ChecklistData().checklists[1])
+    ChecksView(airframe: "R44 Cadet",
+               checklist: ChecklistData().checklists[1])
         .environment(ModelState())
 }

@@ -18,23 +18,22 @@ struct AirframeView: View {
             Text("Select airframe")
                 .font(.headline)
             
-            ForEach(checklistData.airframes, id:\.self) { airframe in
-                Button {
-                    let checklists = checklistData.airframeChecklists[airframe] ?? []
-                    let models = checklistData.airframeModels[airframe] ?? []
+            VStack(alignment: .listRowSeparatorLeading) {
+                ForEach(checklistData.airframes, id:\.self) { airframe in
                     
-                    modelState.airframe    = airframe
-                    modelState.models      = models
-                    modelState.checklists  = checklists
-                    modelState.currentView = models.isEmpty ? .Checklists : .Models
-                } label: {
-                    VStack {
+                    Button {
+                        modelState.airframe    = airframe
+                        modelState.currentView = .Features
+                    } label: {
                         AirframeImage(image: Image(airframe))
                         Text(airframe)
                             .font(.title)
-                    }
-                }.padding(40)
+                            .padding(10)
+                        
+                    }.padding(10)
+                }
             }
+            .padding()
         }
     }
 }

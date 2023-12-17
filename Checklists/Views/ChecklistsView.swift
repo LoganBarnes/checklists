@@ -17,14 +17,8 @@ struct ChecklistsView: View {
     var body: some View {
         VStack {
             Button {
-                modelState.model = nil
-                if model.isEmpty {
-                    modelState.checklists  = nil
-                    modelState.airframe    = nil
-                    modelState.currentView = .Airframe
-                } else {
-                    modelState.currentView = .Models
-                }
+                modelState.airframe    = nil
+                modelState.currentView = .Airframe
             } label: {
                 HStack() {
                     Image(systemName: "chevron.backward")
@@ -47,12 +41,12 @@ struct ChecklistsView: View {
             }
             
             List {
-                ForEach(checklists, id: \.checklistName) {checklist in
+                ForEach(checklists, id: \.title) {checklist in
                     Button {
                         modelState.checklist = checklist
                         modelState.currentView = .Checks
                     } label: {
-                        Text(checklist.checklistName)
+                        Text(checklist.title)
                             .font(.title2)
                     }
                 }
